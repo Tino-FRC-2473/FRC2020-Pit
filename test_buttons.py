@@ -7,18 +7,29 @@ GPIO.setmode(GPIO.BOARD)
 GPIO.setup(14, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 GPIO.add_event_detect(14,GPIO.RISING,callback=playVideo)
 '''
-def print_pressed():
-    print("button pressed")
-
-def print_released():
-    print("button released")
+def run_blue():
+    print("blue button pressed")
+def run_green():
+    print("green button pressed")
+def run_yellow():
+    print("yellow button pressed")
+def run_red():
+    print("red button pressed")
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(0, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-button = Button(0)
+blue_button = Button(0)
+GPIO.setup(5, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+green_button = Button(5)
+GPIO.setup(6, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+yellow_button = Button(6)
+GPIO.setup(13, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+red_button = Button(13)
 
-button.when_pressed = print_pressed
-button.when_released = print_released
+blue_button.when_pressed = run_blue
+green_button.when_pressed = run_green
+yellow_button.when_pressed = run_yellow
+red_button.when_pressed = run_red
 
 while True:
     pass
