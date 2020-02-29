@@ -11,7 +11,7 @@ GPIO.add_event_detect(14,GPIO.RISING,callback=playVideo)
 GPIO.setmode(GPIO.BCM)
 
 button = Button(0)
-button.when_pressed = run
+button.when_pressed = print("button pressed")
 
 def run():
     # if GPIO.input(0) == 1:
