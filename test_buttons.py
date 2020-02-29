@@ -12,3 +12,4 @@ button = Button(0)
 
 while True:
     button.when_pressed = print("button pressed")
+    button.when_released = print("button released")
