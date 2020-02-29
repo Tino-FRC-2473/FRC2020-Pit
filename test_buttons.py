@@ -9,9 +9,13 @@ GPIO.add_event_detect(14,GPIO.RISING,callback=playVideo)
 '''
 
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(0, GPIO.IN)
 
-if GPIO.input(0) == 1:
-    print("Button pin 0 is off")
-    while GPIO.input(0) == 0:
-        print("Button pin 0 pressed")
+button = Button(0)
+button.when_pressed = run
+
+def run():
+    # if GPIO.input(0) == 1:
+    #     print("Button pin 0 is off")
+    #     while GPIO.input(0) == 0:
+    #         print("Button pin 0 pressed")
+    print("button pressed")
