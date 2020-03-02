@@ -9,6 +9,7 @@ from gpiozero import Button
 
 #vars
 current_menu = 1
+print("after var")
 
 #window setup
 window = Tk.Tk()
@@ -44,8 +45,8 @@ label_1.pack(side = "left", fill = "both", expand = "yes")
 label_2.pack(side = "left", fill = "both", expand = "yes")
 label_3.pack(side = "left", fill = "both", expand = "yes")
 label_4.pack(side = "left", fill = "both", expand = "yes")
+print("before mainloop")
 
-window.mainloop()
 
 def change_bg():
     menu_item1.config(bg = "white")
@@ -70,6 +71,7 @@ GPIO.setmode(GPIO.BOARD)
 GPIO.setup(14, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 GPIO.add_event_detect(14,GPIO.RISING,callback=playVideo)
 '''
+print("before functions buttons")
 def run_blue():
     print("blue button pressed")
     if(current_menu <= 1):
@@ -88,7 +90,7 @@ def run_yellow():
     change_bg()
 def run_red():
     print("red button pressed")
-
+print("after functions buttons")
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(0, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 blue_button = Button(0)
@@ -103,6 +105,8 @@ blue_button.when_pressed = run_blue
 green_button.when_pressed = run_green
 yellow_button.when_pressed = run_yellow
 red_button.when_pressed = run_red
-
-while True:
-    pass
+print("before while true")
+#while True:
+    #print("in while true")
+    #pass
+window.mainloop()
