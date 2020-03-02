@@ -8,6 +8,7 @@ import RPi.GPIO as GPIO
 from gpiozero import Button
 
 #vars
+global current_menu
 current_menu = 1
 print("after var")
 
