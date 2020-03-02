@@ -74,6 +74,7 @@ GPIO.add_event_detect(14,GPIO.RISING,callback=playVideo)
 '''
 print("before functions buttons")
 def run_blue():
+    global current_menu
     print("blue button pressed")
     if(current_menu <= 1):
         current_menu = 5
@@ -83,6 +84,7 @@ def run_blue():
 def run_green():
     print("green button pressed")
 def run_yellow():
+    global current_menu
     print("yellow button pressed")
     if(current_menu >= 5):
         current_menu = 1
