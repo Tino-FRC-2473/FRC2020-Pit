@@ -1,6 +1,6 @@
 import RPi.GPIO as GPIO
 from gpiozero import Button
-from menu import Menu 
+#from menu import Menu
 
 '''
 GPIO.setwarnings(False)
@@ -8,7 +8,7 @@ GPIO.setmode(GPIO.BOARD)
 GPIO.setup(14, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 GPIO.add_event_detect(14,GPIO.RISING,callback=playVideo)
 '''
-menu = Menu()
+
 def run_blue():
     print("blue button pressed")
     menu.up_pressed()
