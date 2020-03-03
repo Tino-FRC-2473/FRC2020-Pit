@@ -7,12 +7,15 @@ GPIO.setmode(GPIO.BOARD)
 GPIO.setup(14, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 GPIO.add_event_detect(14,GPIO.RISING,callback=playVideo)
 '''
+menu = Menu()
 def run_blue():
     print("blue button pressed")
+    menu.up_pressed()
 def run_green():
     print("green button pressed")
 def run_yellow():
     print("yellow button pressed")
+    menu.down_pressed()
 def run_red():
     print("red button pressed")
 
